@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorOption from './ColorOption';
+import ColorOption from './coloropt';
 
 const ColorList = ({ colors, onColorClick }) => {
   return (
