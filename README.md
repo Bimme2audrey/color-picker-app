@@ -2,7 +2,7 @@
 React Color Picker App
 # Color Picker Application
 
-This is a simple React application that allows users to select a color from a list and see the background change to that color. It's designed to help you understand the basics of React, including components, state management, and event handling.
+This is a simple React application that allows users to select a color from a list and see the background change to that color. It's designed to help understand the basics of React, including components, state management, and event handling.
 ## Features
 
 - Select from a list of colors.
@@ -41,10 +41,10 @@ This is a simple React application that allows users to select a color from a li
 - **Description**: The main component of the application that maintains the state of the selected background color.
 - **Role**: Renders the `ColorList` component and handles background color changes.
 
-### ColorList Component
+### colorli Component
 - **Description**: Displays a list of `ColorOption` components.
 - **Props**: `colors` (array of color values), `onColorClick` (function to handle color selection).
 
-### ColorOption Component
+### coloropt Component
 - **Description**: Displays a single color option.
 - **Props**: `color` (color value), `onClick` (function to handle click event).
