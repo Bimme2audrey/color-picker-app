@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ColorList from './colorli';
+import './App.css';
 
 
 const App = () => {
