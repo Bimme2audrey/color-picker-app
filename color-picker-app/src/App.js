@@ -1,25 +1,37 @@
 import React, { useState } from 'react';
-import ColorList from './colorList';
 import './App.css';
-
+import Colorist from './components/Colorist';
+import AddColor from './components/AddColor';
 
 const App = () => {
-  const [bgColor, setBgColor] = useState('white');
-  const colors = ['red', 'green', 'blue', 'yellow', 'pink', 'purple'];
+  const [colors, setColors] = useState(['red', 'blue', 'green']);
+  const [selectedColor, setSelectedColor] = useState('');
 
-  const handleColorClick = (color) => {
-    setBgColor(color);
+  const addColor = (color) => {
+    if (!colors.includes(color)) {
+      setColors([...colors, color]);
+    }
+  };
+
+  const removeColor = (color) => {
+    setColors(colors.filter(c => c !== color));
+  };
+
+  const selectColor = (color) => {
+    setSelectedColor(color);
   };
 
   return (
-    <div className="app" style={{ backgroundColor: bgColor }}>
-      <h1>Select a Color</h1>
-      <ColorList colors={colors} onColorClick={handleColorClick} />
+    <div className="App" style={{ backgroundColor: selectedColor }}>
+      <h1>Color Picker</h1>
+      <AddColor onAddColor={addColor} />
+      <Colorist 
+        colors={colors} 
+        onColorSelect={selectColor} 
+        onColorRemove={removeColor} 
+      />
     </div>
   );
 };
 
 export default App;
-
-
-
